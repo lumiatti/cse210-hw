@@ -7,6 +7,8 @@ class Program
         int my_grade;
         string grade;
 
+        grade = "";
+
         Console.WriteLine("What is you grade percentage?");
         my_grade = int.Parse(Console.ReadLine());
 
