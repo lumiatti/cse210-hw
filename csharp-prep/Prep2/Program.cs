@@ -5,9 +5,9 @@ class Program
     static void Main(string[] args)
     {
         int my_grade;
-        string grade;
+        string grade = "";
 
-        grade = "";
+        //grade = "";
 
         Console.WriteLine("What is you grade percentage?");
         my_grade = int.Parse(Console.ReadLine());
