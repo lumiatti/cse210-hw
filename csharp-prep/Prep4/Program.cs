@@ -22,10 +22,7 @@ class Program
                 my_list.Add(number);    
             }
         }
-      //  foreach (int n in my_list)
-      //  {
-      //      total = (total + n);            
-       // }
+
         total = my_list.Sum();
         average = total/my_list.Count();
         largest = my_list.Max();
