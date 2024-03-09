@@ -1,7 +1,7 @@
  public class Jornal
  {
-    public List<Entry> _entries = new List<Entry>();
-    public void AddEntry (Entry _newEntry)
+    public List<Entry> _entries;
+    public void AddEntry (Entry newEntry)
     {
         
     }
@@ -9,7 +9,11 @@
     {
 
     }
-    public void SaveToFile(string _file)
+    public void SaveToFile(string file)
+    {
+
+    }
+    public void LoadFromFile(string file)
     {
 
     }

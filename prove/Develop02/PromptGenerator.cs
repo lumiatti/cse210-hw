@@ -2,11 +2,10 @@ using System.Reflection.Metadata.Ecma335;
 
 public class PromptGenerator
 {
-    public List<string> _prompts = new List<string>();
+    public List<string> _prompts;
 
-    public string GetTandomPrompt()
+    public string GetRandomPrompt()
     {
-        Console.WriteLine("test");
-        return Console.ReadLine();
+        return "";
     }
 }
