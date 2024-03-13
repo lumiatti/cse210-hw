@@ -24,6 +24,11 @@ class Program
             Console.Write("What would you like to do?");
             new_value = Console.ReadLine();
 
+            if (new_value == "1")
+            {
+                
+            }
+
             // Journal theJournal = new Journal();
             // Entry anEntry = new Entry();
             // anEntry._date = "09/03 09:34";
