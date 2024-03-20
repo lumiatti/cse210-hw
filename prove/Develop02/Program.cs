@@ -12,6 +12,13 @@ class Program
         menu.Add("4. Save");
         menu.Add("5. Quit");
 
+        PromptGenerator promptGenerator = new PromptGenerator();
+        promptGenerator._prompts.Add("teste1");
+        promptGenerator._prompts.Add("teste2");
+        promptGenerator._prompts.Add("teste3");
+    
+        Journal journal = new Journal();
+
         while(new_value != "5")
         {
             Console.WriteLine("Please select one of the following choices!");
@@ -21,10 +28,23 @@ class Program
                 Console.WriteLine($"{m}");
             }
 
-            Console.Write("What would you like to do?");
+            Console.WriteLine("What would you like to do?");
             new_value = Console.ReadLine();
+            Console.WriteLine(new_value);
 
             if (new_value == "1")
+            {
+                string recebe = promptGenerator.GetRandomPrompt();
+                Entry entry = new Entry();
+                Console.WriteLine(recebe);
+                string texto = Console.ReadLine();
+                entry._promptText = recebe;
+                entry._entryText = texto;
+                entry._date = DateTime.Now.ToString();
+
+                journal.AddEntry(entry);
+            }
+            else if (new_value == "2")
             {
                 
             }
