@@ -13,9 +13,9 @@ class Program
         menu.Add("5. Quit");
 
         PromptGenerator promptGenerator = new PromptGenerator();
-        promptGenerator._prompts.Add("teste1");
-        promptGenerator._prompts.Add("teste2");
-        promptGenerator._prompts.Add("teste3");
+        promptGenerator._prompts.Add("If I had one thing I could do over today, What would it be?");
+        promptGenerator._prompts.Add("What was the best part of my day?");
+        promptGenerator._prompts.Add("Who was the most interesting person I interacted with today?");
     
         Journal journal = new Journal();
 
@@ -28,35 +28,38 @@ class Program
                 Console.WriteLine($"{m}");
             }
 
-            Console.WriteLine("What would you like to do?");
+            Console.Write("What would you like to do?");
             new_value = Console.ReadLine();
-            Console.WriteLine(new_value);
+            //Console.WriteLine(new_value);
 
             if (new_value == "1")
             {
-                string recebe = promptGenerator.GetRandomPrompt();
+                string strPrompt = promptGenerator.GetRandomPrompt();
                 Entry entry = new Entry();
-                Console.WriteLine(recebe);
-                string texto = Console.ReadLine();
-                entry._promptText = recebe;
-                entry._entryText = texto;
+                Console.WriteLine(strPrompt);
+                string strEntryText = Console.ReadLine();
+                entry._promptText = strPrompt;
+                entry._entryText = strEntryText;
                 entry._date = DateTime.Now.ToString();
 
                 journal.AddEntry(entry);
             }
             else if (new_value == "2")
             {
-                
+               journal.DisplayAll(); 
             }
-
-            // Journal theJournal = new Journal();
-            // Entry anEntry = new Entry();
-            // anEntry._date = "09/03 09:34";
-            // anEntry._entryText = "test entry";
-            // anEntry._promptText = "test prompt";
-
-            //anEntry.Display();
-        
+            else if (new_value == "3")
+            {
+                Console.WriteLine("What is the file name?");
+                string strFileName = Console.ReadLine();
+                journal.LoadFromFile(strFileName); 
+            }
+            else if (new_value == "4")
+            {
+                Console.WriteLine("What is the file name?");
+                string strFileName = Console.ReadLine();
+                journal.SaveToFile(strFileName); 
+            }
         }
     }
 }
